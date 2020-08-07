@@ -175,7 +175,9 @@ def page_not_found(e):  # 接受异常对象作为参数
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':  # 判断是否是 POST 请求
+    # flash('POST1.')  # 显示成功创建的提示
         if not current_user.is_authenticated:  # 如果当前用户未认证
+            # flash('POST2.')  # 显示成功创建的提示
             return redirect(url_for('index'))  # 重定向到主页
             # 获取表单数据
             title = request.form.get('title')  # 传入表单对应输入字段的 name 值
